@@ -1,9 +1,7 @@
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <ctime>
-#include <exception>
-#include <vector>
+
 
 // Vytvorte tento hlavickovy soubor a definujte v nem datovy typ seznam_slov a
 // hlavicky funkci viz nize (UKOL 1-4)
@@ -28,7 +26,7 @@ std::string nazev_z_prikazove_radky(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
 
     std::string nazev_vstupniho_souboru = nazev_z_prikazove_radky(argc,argv);
-    
+
     seznam_slov jmena;
 
     // UKOL 1 - Implementujte nasledujici funkci, ktera nacte do objektu "jmena"
@@ -47,15 +45,16 @@ int main(int argc, char* argv[]) {
 
     // Konec mereni CPU casu
     clock_t end = clock();
-    float seconds = (float)(end - start) / CLOCKS_PER_SEC;
+    float seconds;
+    seconds = (float) (end - start) / CLOCKS_PER_SEC;
 
     std::cout << "Hotovo. Serazeni trvalo " << seconds << " sekundy." <<  std::endl << std::endl;
 
     // UKOL 3 - funkce v podmince se zepta uzivatele,
     //          jestli chce vypsat jmena na obrazovku
     if (zeptej_se_jestli_vypsat()) {
-      // UKOL 4 - Tato funkce vypise serazena jmena na obrazovku
-      vypis(jmena); 
+        // UKOL 4 - Tato funkce vypise serazena jmena na obrazovku
+        vypis(jmena);
     }
 
     return 0;
